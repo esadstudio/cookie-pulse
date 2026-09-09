@@ -28,10 +28,16 @@ Earn eligibility question (required link): `Live application URL`
 PRIMARY (paste this):
 
 ```
-https://cookie-pulse-esad-studio.vercel.app
+https://cookie-pulse-nine.vercel.app
 ```
 
-Public. Vercel Authentication is off. No login wall.
+Public. Name-neutral hostname on the existing Vercel project. Vercel Authentication is off. No login wall.
+
+Legacy Vercel hostname (same project, internal backup only). Do **not** paste this into Earn and do not headline it for Telegram:
+
+```
+https://cookie-pulse-esad-studio.vercel.app
+```
 
 Do **not** paste the Pages URL into the Earn live-application field. Pages is a free backup only:
 
@@ -60,7 +66,7 @@ The console shows the live Cookie slot with no wallet connected. After Nightly a
 
 Phase 1 is the read path only. Pulse is on screen but not armed. The app does not build, sign, or send a transaction. No custom program. No private key in the app. No COOK spend.
 
-Primary live URL: https://cookie-pulse-esad-studio.vercel.app
+Primary live URL: https://cookie-pulse-nine.vercel.app
 Backup (GitHub Pages, already live): https://esadstudio.github.io/cookie-pulse/
 Repo: https://github.com/esadstudio/cookie-pulse
 ```
@@ -70,7 +76,7 @@ Repo: https://github.com/esadstudio/cookie-pulse
 Paste under other info after the short description, or keep for Esad's walkthrough.
 
 ```
-1. Open https://cookie-pulse-esad-studio.vercel.app (no login, no wallet required).
+1. Open https://cookie-pulse-nine.vercel.app (no login, no wallet required).
 2. Confirm the live Cookie slot updates from https://rpc.cookiescan.io.
 3. If Nightly is missing, use Install Nightly. The slot feed still runs.
 4. Optional, still $0: click Connect Nightly and approve the session. Connecting only shares the public key. The app does not request a fee-paying signature.

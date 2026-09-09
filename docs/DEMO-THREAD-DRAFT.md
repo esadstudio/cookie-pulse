@@ -26,7 +26,7 @@ Nightly: https://nightly.app/download
 
 Pulse (a cheap memo / existing-program ping) is stubbed on purpose. A memo later would need dust COOK for fees. The console stays read-first.
 
-Live URL (PRIMARY for Earn): https://cookie-pulse-esad-studio.vercel.app
+Live URL (PRIMARY for Earn): https://cookie-pulse-nine.vercel.app
 Backup (GitHub Pages, already live): https://esadstudio.github.io/cookie-pulse/
 
 ---
