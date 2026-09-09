@@ -12,6 +12,7 @@ import {
   COOKIE_BUILDERS_URL,
   COOKIE_DOCS_URL,
   COOKIE_RPC_URL,
+  DOCUMENTED_WSS_URL,
   COOKIESCAN_API_URL,
   COOKIESCAN_URL,
   LISTING_URL,
@@ -21,7 +22,7 @@ import {
 import { useSlot } from "./hooks/useSlot";
 import { useToasts } from "./hooks/useToasts";
 import { useWalletActivity } from "./hooks/useWalletActivity";
-import { formatSlot, shortenAddress } from "./lib/format";
+import { formatSlot } from "./lib/format";
 
 export default function App() {
   const { connected, publicKey } = useWallet();
@@ -29,6 +30,7 @@ export default function App() {
   const activity = useWalletActivity(publicKey);
   const { toasts, push, dismiss } = useToasts();
   const lastError = useRef<string | null>(null);
+  const lastActivityError = useRef<string | null>(null);
 
   useEffect(() => {
     if (slotError && lastError.current !== slotError) {
@@ -41,6 +43,18 @@ export default function App() {
     }
     if (!slotError) lastError.current = null;
   }, [push, slotError]);
+
+  useEffect(() => {
+    if (activity.error && lastActivityError.current !== activity.error) {
+      lastActivityError.current = activity.error;
+      push({
+        tone: "error",
+        title: "Wallet read incomplete",
+        detail: activity.error,
+      });
+    }
+    if (!activity.error) lastActivityError.current = null;
+  }, [activity.error, push]);
 
   const notify = useCallback(
     (input: { tone: "info" | "ok" | "warn" | "error"; title: string; detail?: string }) => {
@@ -78,6 +92,7 @@ export default function App() {
         <Heartbeat history={history} />
         <p className="rpc-line">
           RPC <code>{COOKIE_RPC_URL}</code>
+          <span className="wss-note">docs WSS {DOCUMENTED_WSS_URL} (optional)</span>
         </p>
       </section>
 
@@ -106,15 +121,23 @@ export default function App() {
                 href={cookiescanAddressUrl(publicKey.toBase58())}
                 target="_blank"
                 rel="noreferrer"
+                className="full-address"
               >
-                {shortenAddress(publicKey.toBase58(), 6)}
+                {publicKey.toBase58()}
               </a>
               <button
                 type="button"
                 className="link-button"
                 onClick={() => {
-                  void navigator.clipboard.writeText(publicKey.toBase58());
-                  push({ tone: "ok", title: "Address copied" });
+                  void navigator.clipboard.writeText(publicKey.toBase58()).then(
+                    () => push({ tone: "ok", title: "Address copied" }),
+                    () =>
+                      push({
+                        tone: "error",
+                        title: "Copy failed",
+                        detail: "Select the address and copy it manually.",
+                      }),
+                  );
                 }}
               >
                 Copy

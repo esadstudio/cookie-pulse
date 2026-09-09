@@ -52,13 +52,19 @@ code {
 }
 
 .masthead,
-.panel-head,
 .wallet-controls,
 .footnotes {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+}
+
+.panel-head {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  gap: 4px 16px;
 }
 
 .masthead {
@@ -126,6 +132,11 @@ h2 {
   font-size: 0.85rem;
 }
 
+.wss-note {
+  display: block;
+  margin-top: 4px;
+}
+
 .console {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -167,9 +178,14 @@ h2 {
 .address-line {
   display: flex;
   gap: 12px;
-  align-items: center;
+  align-items: flex-start;
   margin: 12px 0 16px;
   font-family: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+.full-address {
+  overflow-wrap: anywhere;
+  word-break: break-all;
 }
 
 .metric {
@@ -310,7 +326,7 @@ a:hover,
   box-shadow: var(--shadow);
 }
 
-.toast:is(:popover-open, .\:popover-open) {
+.toast:is(:popover-open, .\:popover-open, .toast-visible) {
   display: flex;
   justify-content: space-between;
   gap: 12px;

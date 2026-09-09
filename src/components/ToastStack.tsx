@@ -26,7 +26,7 @@ export function ToastStack({ toasts, onDismiss }: ToastStackProps) {
         <article
           key={toast.id}
           id={`toast-${toast.id}`}
-          className={`toast toast-${toast.tone}`}
+          className={`toast toast-visible toast-${toast.tone}`}
           popover="manual"
           role="status"
         >

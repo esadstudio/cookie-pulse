@@ -1,10 +1,9 @@
 export const DEFAULT_RPC_URL = "https://rpc.cookiescan.io";
-export const DEFAULT_WSS_URL = "https://wss.cookiescan.io";
+export const DOCUMENTED_WSS_URL = "https://wss.cookiescan.io";
 
 export const COOKIE_RPC_URL =
   import.meta.env.VITE_COOKIE_RPC_URL ?? DEFAULT_RPC_URL;
-export const COOKIE_WSS_URL =
-  import.meta.env.VITE_COOKIE_WSS_URL ?? DEFAULT_WSS_URL;
+export const COOKIE_WSS_URL = import.meta.env.VITE_COOKIE_WSS_URL;
 
 export const COOKIESCAN_URL = "https://cookiescan.io";
 export const COOKIESCAN_API_URL = "https://api.cookiescan.io";
