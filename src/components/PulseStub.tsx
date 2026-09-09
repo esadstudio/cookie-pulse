@@ -11,12 +11,13 @@ export function PulseStub({ connected, onNotify }: PulseStubProps) {
         <h2>Pulse</h2>
       </header>
       <p>
-        Phase 1 is read-first. This control will later send a cheap memo or call an existing
-        Cookie program. It does not request a signature and does not spend COOK.
+        Phase 1 is read-first. This control does not request a signature and does not spend
+        COOK. A later memo ping would need dust COOK for fees — that path stays off until a
+        human funds a wallet on purpose.
       </p>
       <p className="todo">
-        TODO: arm Pulse only after a fee-safe existing program or memo path is confirmed. Do
-        not invent Cookie program IDs.
+        TODO: arm Pulse only after a fee-safe existing program or memo path is confirmed and
+        dust is available. Do not invent Cookie program IDs. Do not send from this stub.
       </p>
       <button
         type="button"

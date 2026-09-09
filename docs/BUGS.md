@@ -8,6 +8,7 @@ Known issues, RPC quirks, and wallet notes for Cookie Pulse.
 | --- | --- | --- | --- | --- |
 | 2026-09-09 | WSS | Medium | Open | Cookie docs list WebSocket `https://wss.cookiescan.io`. TLS for that host does not match `wss.cookiescan.io` (cert presented as another hostname). Cookie Pulse therefore polls HTTP RPC for slot and does not set `wsEndpoint` unless `VITE_COOKIE_WSS_URL` is provided. |
 | 2026-09-09 | Nightly | Low | Open | Cloud / CI browsers do not have Nightly installed. The console shows Install Nightly and still reads slot. Connected-wallet UI needs the extension. |
+| 2026-09-09 | Pages | Low | Open | Live URL stays dark until Esad sets **Settings → Pages → Source → GitHub Actions**. No secrets. See `docs/PAGES.md`. |
 
 ## Template
 

@@ -24,7 +24,9 @@ Listing: https://superteam.fun/earn/listing/create-an-app-on-cookie-chain-app/
 
 Nightly: https://nightly.app/download
 
-Pulse (a cheap memo / existing-program ping) is stubbed on purpose for Phase 1. The console stays read-first until a fee-safe write path is confirmed.
+Pulse (a cheap memo / existing-program ping) is stubbed on purpose. A memo later would need dust COOK for fees. The console stays read-first.
+
+Live URL (after Pages is enabled): https://esadstudio.github.io/cookie-pulse/
 
 ---
 
