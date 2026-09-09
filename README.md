@@ -10,9 +10,15 @@ Paste-ready Superteam Earn fields: [docs/EARN-SUBMIT.md](docs/EARN-SUBMIT.md).
 
 ## Live URL (PRIMARY for Earn judges)
 
+https://cookie-pulse-nine.vercel.app
+
+Public Vercel deploy on the existing project. Name-neutral hostname. Vercel Authentication is off. Judges can open the console without a login wall and without spending COOK.
+
+### Secondary (legacy Vercel hostname, internal only)
+
 https://cookie-pulse-esad-studio.vercel.app
 
-Public Vercel deploy. Vercel Authentication is off. Judges can open the console without a login wall and without spending COOK.
+Same Vercel project. Internal backup only. Do not headline this hostname for Earn or Telegram.
 
 ### Backup (GitHub Pages, already live)
 
@@ -53,7 +59,8 @@ This branch is meant to be judged without spending COOK.
 
 | Need | Where |
 | --- | --- |
-| Live URL (PRIMARY) | https://cookie-pulse-esad-studio.vercel.app (public, Vercel Auth off) |
+| Live URL (PRIMARY) | https://cookie-pulse-nine.vercel.app (public, Vercel Auth off) |
+| Legacy Vercel hostname | https://cookie-pulse-esad-studio.vercel.app (same project, internal backup only) |
 | Backup URL | https://esadstudio.github.io/cookie-pulse/ (GitHub Pages, already live) |
 | Nightly | https://nightly.app/download. Use **Connect Nightly** in the console. |
 | Cookie RPC | `https://rpc.cookiescan.io` (`COOKIE_RPC_URL` / `VITE_COOKIE_RPC_URL`) |
