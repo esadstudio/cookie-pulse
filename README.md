@@ -11,7 +11,7 @@ Cookie Pulse is a Vite + React + TypeScript web app. It points the official Sola
 - After Nightly connects: the full base58 address, native COOK, non-zero SPL balances, and a recent signature feed with Cookiescan links.
 - Loading, empty, and error states on slot, balances, and activity.
 - Transaction / wallet status toasts.
-- Pulse is visible but **not armed**. It is a labeled TODO for a later cheap memo or existing Cookie program call. It never builds or signs a transaction in this phase.
+- Pulse is visible but **not armed**. A later memo ping would need dust COOK for fees. Phase 1 never builds or signs a transaction.
 
 ## Setup
 
@@ -30,6 +30,37 @@ npm run preview
 ```
 
 No secrets are required. Do not put a private key in `.env`.
+
+## Earn-ready at $0
+
+This branch is meant to be judged without spending COOK and without a paid host.
+
+| Need | Where |
+| --- | --- |
+| Nightly | https://nightly.app/download — **Connect Nightly** in the console |
+| Cookie RPC | `https://rpc.cookiescan.io` (`COOKIE_RPC_URL` / `VITE_COOKIE_RPC_URL`) |
+| Bridge COOK | https://bridge.cookiescan.io — this app never starts a transfer |
+| Explorer | https://cookiescan.io |
+| Pulse | Stub only. Arming a memo later needs dust COOK for fees. Not in this phase. |
+| Live URL | Free GitHub Pages after merge — see below |
+
+## Live URL (GitHub Pages)
+
+After `main` has this workflow and Pages is set to **GitHub Actions**:
+
+https://esadstudio.github.io/cookie-pulse/
+
+No secrets. No Vercel bill. Exact clicks: [docs/PAGES.md](docs/PAGES.md).
+
+### Enable Pages (Esad — one-time)
+
+1. Repo **Settings → Pages**
+2. **Build and deployment → Source → GitHub Actions**
+3. Do not choose “Deploy from a branch”
+4. Merge this work to `main` (or **Actions → GitHub Pages → Run workflow**)
+5. Open https://esadstudio.github.io/cookie-pulse/
+
+If Deploy sits on the `github-pages` environment, approve it under **Settings → Environments**, or clear required reviewers. Still $0.
 
 ## RPC and explorer
 
@@ -81,7 +112,9 @@ src/
   lib/            formatters and RPC helpers
 docs/
   BUGS.md
+  PAGES.md
   DEMO-THREAD-DRAFT.md
+.github/workflows/pages.yml   free GitHub Pages build + deploy
 ```
 
 ## Scripts
