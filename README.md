@@ -2,7 +2,23 @@
 
 A read-first [Cookie Chain](https://docs.cookiechain.wtf/) activity console for the [Superteam Earn Cookie Chain cApp bounty](https://superteam.fun/earn/listing/create-an-app-on-cookie-chain-app/).
 
-Cookie Pulse is a Vite + React + TypeScript web app. It points the official Solana client SDK at the Cookie community RPC, requires [Nightly](https://nightly.app/download) via `@solana/wallet-adapter-nightly`, and shows live slot, native COOK, SPL / Token-2022 balances, and recent signatures. Phase 1 does not deploy a custom program, does not ask for a private key, and does not spend COOK.
+Cookie Pulse is a Vite + React + TypeScript web app. It points the official Solana client SDK at the Cookie community RPC, requires [Nightly](https://nightly.app/download) via `@solana/wallet-adapter-nightly`, and shows live slot, native COOK, SPL / Token-2022 balances, and recent signatures.
+
+Phase 1 is the **read path**. The console does not deploy a custom program, does not ask for a private key, and does not spend COOK. On-chain transactions are gated. Pulse stays stubbed until Esad opens that gate.
+
+Paste-ready Superteam Earn fields: [docs/EARN-SUBMIT.md](docs/EARN-SUBMIT.md).
+
+## Live URL (PRIMARY for Earn judges)
+
+https://cookie-pulse-esad-studio.vercel.app
+
+Public Vercel deploy. Vercel Authentication is off. Judges can open the console without a login wall and without spending COOK.
+
+### Backup (GitHub Pages, already live)
+
+https://esadstudio.github.io/cookie-pulse/
+
+Free Pages backup. Same app. Not the Earn headline URL. Ops notes: [docs/PAGES.md](docs/PAGES.md).
 
 ## What judges should see
 
@@ -33,34 +49,17 @@ No secrets are required. Do not put a private key in `.env`.
 
 ## Earn-ready at $0
 
-This branch is meant to be judged without spending COOK and without a paid host.
+This branch is meant to be judged without spending COOK.
 
 | Need | Where |
 | --- | --- |
-| Nightly | https://nightly.app/download — **Connect Nightly** in the console |
+| Live URL (PRIMARY) | https://cookie-pulse-esad-studio.vercel.app (public, Vercel Auth off) |
+| Backup URL | https://esadstudio.github.io/cookie-pulse/ (GitHub Pages, already live) |
+| Nightly | https://nightly.app/download. Use **Connect Nightly** in the console. |
 | Cookie RPC | `https://rpc.cookiescan.io` (`COOKIE_RPC_URL` / `VITE_COOKIE_RPC_URL`) |
-| Bridge COOK | https://bridge.cookiescan.io — this app never starts a transfer |
+| Bridge COOK | https://bridge.cookiescan.io. Link only. This app never starts a transfer. |
 | Explorer | https://cookiescan.io |
 | Pulse | Stub only. Arming a memo later needs dust COOK for fees. Not in this phase. |
-| Live URL | Free GitHub Pages after merge — see below |
-
-## Live URL (GitHub Pages)
-
-After `main` has this workflow and Pages is set to **GitHub Actions**:
-
-https://esadstudio.github.io/cookie-pulse/
-
-No secrets. No Vercel bill. Exact clicks: [docs/PAGES.md](docs/PAGES.md).
-
-### Enable Pages (Esad — one-time)
-
-1. Repo **Settings → Pages**
-2. **Build and deployment → Source → GitHub Actions**
-3. Do not choose “Deploy from a branch”
-4. Merge this work to `main` (or **Actions → GitHub Pages → Run workflow**)
-5. Open https://esadstudio.github.io/cookie-pulse/
-
-If Deploy sits on the `github-pages` environment, approve it under **Settings → Environments**, or clear required reviewers. Still $0.
 
 ## RPC and explorer
 
@@ -113,7 +112,8 @@ src/
 docs/
   BUGS.md
   PAGES.md
-  DEMO-THREAD-DRAFT.md
+  DEMO-THREAD-DRAFT.md   GATED X draft. Do not post.
+  EARN-SUBMIT.md         paste-ready Superteam Earn fields
 .github/workflows/pages.yml   free GitHub Pages build + deploy
 ```
 
@@ -130,5 +130,6 @@ docs/
 
 - Custom on-chain program deploy
 - Spending COOK or requesting a fee-paying signature
+- Armed Pulse / any on-chain write (gated until Esad opens it)
 - Memecoin launcher / ape UX
 - Private keys in the browser app
