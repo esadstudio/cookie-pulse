@@ -1,0 +1,1 @@
+Cookie Pulse bootstrap
